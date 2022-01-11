@@ -1,0 +1,17 @@
+{  
+    "name": "high-side-switch-ino",
+    "keywords": "high side switch, profet, smart switch",
+    "description": "C++ library for the Infineon PROFET high-side switch product family",
+    "repository":{  
+       "type":"git",
+       "url":"https://github.com/Infineon/arduino-high-side-switch",
+       "branch":"master"
+    },
+    "version":"1.0.0",
+    "license":"MIT",
+    "frameworks":"arduino",
+    "platforms":[  
+       "infineonxmc",
+       "atmelavr"
+    ]
+ }
