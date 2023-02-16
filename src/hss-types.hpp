@@ -16,36 +16,36 @@ namespace hss
      * @{
      */
 
-	/**
-	 * @brief Error codes
-	 * @{
-	 */
-	enum Error_t
-	{
-		OK          	     =  0,   /**< No error */
-		INTF_ERROR  	     = -1,   /**< Interface error */
-		CONF_ERROR  	     = -2,   /**< Configuration error */
-		READ_ERROR  	     = -3,   /**< Read error */
-		WRITE_ERROR 	     = -4,   /**< Write error */
-		NULLPTR_ERROR        = -5,   /**< Null pointer error */
-		INVALID_CH_ERROR     = -6,   /**< Invalid channel error */
+    /**
+     * @brief Error codes
+     * @{
+     */
+    enum Error_t
+    {
+        OK                   =  0,   /**< No error */
+        INTF_ERROR           = -1,   /**< Interface error */
+        CONF_ERROR           = -2,   /**< Configuration error */
+        READ_ERROR           = -3,   /**< Read error */
+        WRITE_ERROR          = -4,   /**< Write error */
+        NULLPTR_ERROR        = -5,   /**< Null pointer error */
+        INVALID_CH_ERROR     = -6,   /**< Invalid channel error */
         UNSUPPORTED_OP_ERROR = -7,   /**< Invalid channel error */
         INIT_ERROR           = -8    /**< Not initialized */
-	};
-	/** @} */
+    };
+    /** @} */
 
-	/**
-	 * @brief Channel numbers
-	 * @{
-	 */
-	enum Channel_t
-	{
-		CHANNEL0 	 = 0,           /**< Channel 1 : Valid for BTT shields */
-		CHANNEL1 	 = 1,           /**< Channel 2 : Valid for BTT shields */
-		ALL_CHANNELS = 2,           /**< Select all channels : Valid for BTT shields */
+    /**
+     * @brief Channel numbers
+     * @{
+     */
+    enum Channel_t
+    {
+        CHANNEL0     = 0,           /**< Channel 1 : Valid for BTT shields */
+        CHANNEL1     = 1,           /**< Channel 2 : Valid for BTT shields */
+        ALL_CHANNELS = 2,           /**< Select all channels : Valid for BTT shields */
         NO_CHANNEL   = 3            /**< No channel to select */
-	};
-	/** @} */
+    };
+    /** @} */
 
     /**
      * @brief Switch status
@@ -53,7 +53,7 @@ namespace hss
      */
     enum Status_t{
         UNINITED    = 0,    /**< Not initialized */
-        INITED      = 1,    /**< Initiliazed */
+        INITED      = 1,    /**< Initialized */
         POWER_ON    = 2,    /**< Power on */
         POWER_OFF   = 3,    /**< Power off */
     };
@@ -77,7 +77,7 @@ namespace hss
         DIAG_READ_ERROR     = -1,   /**< Read Error */
         NOT_ENABLED         = -2,   /**< Diagnosis not enabled */
         NORMAL              = 0,    /**< Switch works correctly */
-        FAULT               = 1,    /**< Switch is in fault condition (Is_fault at IS pin), which can mean "Short to GND", "Overtemperature" or "Overload" */
+        FAULT               = 1,    /**< Switch is in fault condition (Is_fault at IS pin), which can mean "Short to GND/VS", "Overtemperature" or "Overload" */
         FAULT_OL_IC         = 2,    /**< Switch is is either in Open Load (whit enable channel) or inverse current is flowing */
         SHORT_TO_GND_OR_OT  = 3,    /**< Short to the ground or Overtemperature detected*/
         SHORT_TO_VSS        = 5,    /**< Short to the supply voltage */

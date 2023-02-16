@@ -24,9 +24,10 @@ namespace hss
  */
 enum HssType_t
 {
-    BTS700X,    /**< PROFET +2 12V family */        
-    BTS5001X,   /**< Power PROFET family */
-    BTT60X0     /**< PROFET + 24V family */
+    BTS500XX,       /**< PROFET + 12V family */
+    BTS5001X,       /**< Power PROFET family */
+    BTS700X,        /**< PROFET +2 12V family */
+    BTT60X0         /**< PROFET + 24V family */
 };
 
 /**
@@ -44,16 +45,19 @@ struct BtxVariants_t
     float           iisO;           /**< Sense offset */
 };
 
-extern BtxVariants_t BTS7002;     
+extern BtxVariants_t BTS50005_1LUA;
+extern BtxVariants_t BTS50010_1LUA;
+
+extern BtxVariants_t BTS50015;
+extern BtxVariants_t BTS50010;
+
+extern BtxVariants_t BTS7002;
 extern BtxVariants_t BTS7004;
 extern BtxVariants_t BTS7006;
 extern BtxVariants_t BTS7008;
 
 extern BtxVariants_t BTT6030;
 extern BtxVariants_t BTT6020;
-
-extern BtxVariants_t BTS50015;
-extern BtxVariants_t BTS50010;
 
 /** @} */
 

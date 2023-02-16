@@ -20,11 +20,11 @@
  *             ____________________________________________________
  *
  *              In this example we use the digitalReadButton() functionality of the library
- *              to toggle the switch 0 output and read out the VSS of the attached power supply. 
+ *              to toggle the switch 0 output and read out the VSS of the attached power supply.
  *              In case you wish to use analogReadButton() functionality, replace digitalReadButton()
  *              by analogReadButton().
  *
- * @note        Ensure always that you have right function being called in correspondance to the jumper configurations.
+ * @note        Ensure always that you have right function being called in correspondence to the jumper configurations.
  * @copyright   Copyright (c) 2021 Infineon Technologies AG
  */
 
@@ -73,7 +73,7 @@ void loop()
         delay(10);
     }
 
-    /** Toogles the output when the button is pressed */
+    /** Toggles the output when the button is pressed */
     if(button_pressed)
     {
         button_pressed = false;
@@ -88,7 +88,7 @@ void loop()
             HSS.switchHxOff(sw);
         }
     }
-    
+
     delay(50);
 
     /** Read the Vss value when the switch is ON */

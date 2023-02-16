@@ -18,51 +18,70 @@ namespace hss
 /**
  * @brief BTS700x Shield Arduino Uno Pin Configuration
  */
-Bts700xHwConfig_t BTS700X_HWCONFIG = 
+Bts700xHwConfig_t BTS700X_HWCONFIG =
 {
-    .led1 = 4,                      
-    .led2 = 5,                      
-    .led3 = 12,                     
-    .led4 = 13,                     
+    .led1 = 4,
+    .led2 = 5,
+    .led3 = 12,
+    .led4 = 13,
 
-    .in1 = 9,                       
-    .in2 = 10,                      
-    .in3 = 11,                      
-    .in4 = 3,                       
+    .in1 = 9,
+    .in2 = 10,
+    .in3 = 11,
+    .in4 = 3,
 
-    .oloff = 7,                     
+    .oloff = 7,
 
-    .den1_den3 = 6,                 
-    .den2_den4 = 8,                 
+    .den1_den3 = 6,
+    .den2_den4 = 8,
 
-    .pushButtonDigital = 2,         
+    .pushButtonDigital = 2,
 
-    .pushButtonAnalog = A0,         
-    .vBat =             A1,         
-    .is1_is2 =          A2,         
-    .is3_is4 =          A3          
+    .pushButtonAnalog = A0,
+    .vBat =             A1,
+    .is1_is2 =          A2,
+    .is3_is4 =          A3
 };
 
 /**
- * @brief BTS5001x Shield Arduino Uno Pin Configuration 
+ * @brief BTS500xx Shield Arduino Uno pin configuration
  */
-BTS5001xHwConfig_t BTS5001X_HWCONFIG = 
+Bts500xxHwConfig_t BTS500XX_HWCONFIG =
 {
-    .led2 = 9,                      
-    .led3 = 5,                      
+    .in1 = 12,
+    .in2 = 10,
 
-    .in = 6,                        
+    .den1 = 11,
+    .den2 = 9,
 
-    .pushButtonAnalog = A0,         
-    .vBat = A5,                     
-    .is = A2,                       
+    .is1 = A0,
+    .is2 = A4,
+
+    .vs =   A1,
+    .vOut = A3,
+    .temp = A2
+};
+
+/**
+ * @brief BTS5001x Shield Arduino Uno Pin Configuration
+ */
+BTS5001xHwConfig_t BTS5001X_HWCONFIG =
+{
+    .led2 = 9,
+    .led3 = 5,
+
+    .in = 6,
+
+    .pushButtonAnalog = A0,
+    .vBat = A5,
+    .is = A2,
 
 };
 
 /**
- * @brief BTT60xx Shield Arduino Uno Pin Configuration 
+ * @brief BTT60xx Shield Arduino Uno Pin Configuration
  */
-Btt60xxHwConfig_t BTT60XX_HWCONFIG = 
+Btt60xxHwConfig_t BTT60XX_HWCONFIG =
 {
     ///Profet0 - BTT6030 (2 channel) pin config
     .in0_0  = A3,

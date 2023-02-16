@@ -6,13 +6,50 @@
 # Datatypes (KEYWORD1)
 #######################################
 
+HssIno              KEYWORD1
+Bts700xShieldIno    KEYWORD1
+Bts5001xShieldIno   KEYWORD1
+Btt60xxShieldIno    KEYWORD1
+
+BtxVariants_t       KEYWORD1
+HssType_t           KEYWORD1
+Error_t             KEYWORD1
+DiagStatus_t        KEYWORD1
+Status_t            KEYWORD1
+Channel_t           KEYWORD1
+Bts700xHwConfig_t   KEYWORD1
+BTS5001xHwConfig_t  KEYWORD1
+Btt60xxHwConfig_t   KEYWORD1
+Bts500xxHwConfig_t  KEYWORD1
+
+
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin   KEYWORD2
-end	KEYWORD2
+begin               KEYWORD2
+end	                KEYWORD2
 
+init                KEYWORD2
+deinit              KEYWORD2
+switchHxOn          KEYWORD2
+switchHxOff         KEYWORD2
+readDiagx           KEYWORD2
+readIsx             KEYWORD2
+
+switchesHxOn        KEYWORD2
+switchesHxOff       KEYWORD2
+
+# Bts500xx
+readVs              KEYWORD2
+readVOut            KEYWORD2
+readTemperature     KEYWORD2
+
+# Bts700x
+readVss             KEYWORD2
+digitalReadButton   KEYWORD2
+analogReadButton    KEYWORD2
+setVoltageOffset    KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

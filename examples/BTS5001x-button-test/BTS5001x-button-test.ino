@@ -51,7 +51,7 @@ void loop()
     {
         button_pressed = true;
         delay(10);
-    } 
+    }
 
     /** Toogles the output when the button is pressed */
     if(button_pressed)
@@ -68,7 +68,7 @@ void loop()
             HSS.switchHxOff();
         }
     }
-    
+
     delay(50);
 
     /** Read the Vss value when the switch is ON and only in every 10th iteration (500ms interval) */

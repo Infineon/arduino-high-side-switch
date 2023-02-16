@@ -17,7 +17,7 @@ ExponentialFilter::ExponentialFilter()
     this->y = 0.0;
     this->y_last = 0.0;
     this->x = 0.0;
-    this->tau = 1;
+    this->alpha = 0.4;
 }
 
 /**
@@ -29,19 +29,20 @@ ExponentialFilter::ExponentialFilter(float y)
     this->y = y;
     this->y_last = y;
     this->x = y;
+    this->alpha = 0.4;
 }
 
 /**
- * @brief       Exponential filter constructor with initial value and time
+ * @brief       Exponential filter constructor with initial value and alpha
  * @param[in]   y   Initial filter value
  * @param[in]   t   Time value
  */
-ExponentialFilter::ExponentialFilter(float y, uint16_t t)
+ExponentialFilter::ExponentialFilter(float y, float a)
 {
     this->y = y;
     this->y_last = y;
     this->x = y;
-    this->tau = pow2(t);
+    this->alpha = a;
 }
 
 /**
@@ -49,21 +50,21 @@ ExponentialFilter::ExponentialFilter(float y, uint16_t t)
  * @param[in]   y   Initial filter value
  * @param[in]   t   Time value
  */
-void ExponentialFilter::setFilter(float y, uint16_t t)
+void ExponentialFilter::setFilter(float y, float a)
 {
     this->y = y;
     this->y_last = y;
     this->x = y;
-    this->tau = pow2(t);
+    this->alpha = a;
 }
 
 /**
- * @brief       Sets time constant
+ * @brief       Sets alpha
  * @param[in]   t  Time value
  */
-void ExponentialFilter::setTau(uint16_t t)
+void ExponentialFilter::setAlpha(float a)
 {
-    this->tau = pow2(t);
+    this->alpha = a;
 }
 
 /**
@@ -83,8 +84,7 @@ void ExponentialFilter::input(float x)
 {
     y_last = y;
     this->x = x;
-
-    y = y_last + ((x - y_last)/(float)tau);
+    this->y = (alpha * y_last) + ((1 - alpha) * x);
 }
 
 /**
@@ -95,15 +95,3 @@ float ExponentialFilter::output()
 {
     return y;
 }
-
-
-/**
- * @brief       Calculates power two 
- * @param[in]   p  base to apply power 2
- * @return      Power two result
- */
-uint16_t ExponentialFilter::pow2(uint16_t p)
-{
-    return 1<< p;
-}
-

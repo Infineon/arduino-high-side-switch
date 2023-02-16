@@ -62,8 +62,8 @@ Bts700xShield::~Bts700xShield()
 /**
  * @brief   Initialize all necessary objects of the High-Side-Switch-Board
  * @details This function initializes all necessary objects of the High-Side-Switch-Board.
- *          It retruns an error code to see if everything was initialized correctly.
- * @return High-side switch error code 
+ *          It returns an error code to see if everything was initialized correctly.
+ * @return  High-side switch error code
  */
 Error_t Bts700xShield::init()
 {
@@ -213,7 +213,7 @@ Error_t Bts700xShield::init()
             break;
         }
 
-        filterVbat = new ExponentialFilter(0.0, 0.3);
+        filterVbat = new ExponentialFilter(0.0, 0.4);
 
         if(NULL == btxVariant){
             return NULLPTR_ERROR;
@@ -227,8 +227,8 @@ Error_t Bts700xShield::init()
 /**
  * @brief    Deinitialize all necessary objects of the High-Side-Switch-Board
  * @details  This function deinitializes all necessary objects of the High-Side-Switch-Board.
- *           It retruns an error code to see if everything was deinitialized correctly.
- * @return High-side switch error code 
+ *           It returns an error code to see if everything was deinitialized correctly.
+ * @return   High-side switch error code
  */
 Error_t Bts700xShield::deinit()
 {
@@ -392,7 +392,7 @@ Error_t Bts700xShield::deinit()
  * @details This function turns on the desired High-Side-Switch.
  *          It also turns on the corresponding LED of the switch.
  * @param[in]   x   Number of the Switch the should be turned on (1-4)
- * @return High-side switch error code 
+ * @return  High-side switch error code
  */
 Error_t Bts700xShield::switchHxOn(uint8_t x)
 {
@@ -433,7 +433,7 @@ Error_t Bts700xShield::switchHxOn(uint8_t x)
  * @details This function turns off the desired High-Side-Switch.
  *          It also turns off the corresponding LED of the switch.
  * @param[in]   x   Number of the Switch the should be turned off (1-4)
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Bts700xShield::switchHxOff(uint8_t x)
 {
@@ -476,7 +476,7 @@ Error_t Bts700xShield::switchHxOff(uint8_t x)
  * @param[in] h2    Enable the second switch if h2 == true
  * @param[in] h3    Enable the third switch if h3 == true
  * @param[in] h4    Enable the fourth switch if h4 == true
- * @return High-side switch error code 
+ * @return  High-side switch error code
  */
 Error_t Bts700xShield::switchesHxOn(bool h1, bool h2, bool h3, bool h4)
 {
@@ -526,7 +526,7 @@ Error_t Bts700xShield::switchesHxOn(bool h1, bool h2, bool h3, bool h4)
  * @param[in] h2    Disable the second switch if h2 == true
  * @param[in] h3    Disable the third switch if h3 == true
  * @param[in] h4    Disable the fourth switch if h4 == true
- * @return High-side switch error code 
+ * @return    High-side switch error code
  */
 Error_t Bts700xShield::switchesHxOff(bool h1, bool h2, bool h3, bool h4)
 {
@@ -593,7 +593,7 @@ DiagStatus_t Bts700xShield::readDiagx(uint8_t x)
             hss1->enableDiag();
             if(hss1->getSwitchStatus() == POWER_ON)
             {
-                currentOn = readIsx(1);
+                currentOn = readIsx(1); // Il
                 diagStatus = hss1->diagRead(currentOn);
             }
             else
@@ -732,7 +732,7 @@ float Bts700xShield::readVss()
     adcResult = vBat->ADCRead();
     voltage = adcResult * ((float)5/(float)1024);   // Vmax/1024 LSB = Resolution of the ADC
     voltage = (voltage - vBatOffset);
-    voltage = voltage * ((float)57/(float)10);      // 57/10 = Reverse Voltage devider to get the Supplyvoltage
+    voltage = voltage * ((float)57/(float)10);      // 57/10 = Reverse Voltage divider to get the supply voltage
 
     filterVbat->input(voltage);
 
@@ -788,8 +788,8 @@ void Bts700xShield::setVoltageOffset(float offset)
  * @brief    Calculates the diagnosis state
  * @details  This functions determines the diagnosis state of the High-Side-Switch.
  *           It uses the measured currents with en- and disabled Open-Load-Detection.
- * @param[in]   currentOn   Measrued current with Open-Load-Detection on
- * @param[in]   currentOff  Measrued current with Open-Load-Detection off
+ * @param[in]   currentOn   Measured current with Open-Load-Detection on
+ * @param[in]   currentOff  Measured current with Open-Load-Detection off
  * @return   DiagStatus_t
  */
 DiagStatus_t Bts700xShield::diagnosisOff(float currentOn, float currentOff)

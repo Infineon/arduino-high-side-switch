@@ -12,6 +12,58 @@ namespace hss
 {
 
 /**
+ * @brief BTS50005-1LUA
+ * @details Is rated for nominal 57 A
+ */
+BtxVariants_t BTS50005_1LUA = {
+    .type = BTS500XX,
+    .kilis = 50000,
+    .iisFault = 0.004,
+    .iisOl = 0.0,
+    .iisEn = 0.0,
+    .iisO = 0.0
+};
+
+/**
+ * @brief BTS50010-1LUA
+ * @details Is rated for nominal 57 A
+ */
+BtxVariants_t BTS50010_1LUA = {
+    .type = BTS500XX,
+    .kilis = 38000,
+    .iisFault = 0.004,
+    .iisOl = 0.0,
+    .iisEn = 0.0,
+    .iisO = 0.0
+};
+
+/**
+ * @brief   BTS50010-1TAD.
+ * @details Is rated for nominal 40 A
+ */
+BtxVariants_t BTS50010 = {
+    .type = BTS5001X,
+    .kilis = 52100,
+    .iisFault = 0.0035,
+    .iisOl = 0.0,
+    .iisEn = 0.0,
+    .iisO = 0.000008
+};
+
+/**
+ * @brief   BTS50015-1TAD.
+ * @details Is rated for nominal 33 A
+ */
+BtxVariants_t BTS50015 = {
+    .type = BTS5001X,
+    .kilis = 51500,
+    .iisFault = 0.0035,
+    .iisOl = 0.0,
+    .iisEn = 0.0,
+    .iisO = 0.000005
+};
+
+/**
  * @brief   BTS7002.
  * @details Is rated for nominal 21 A and is the Profet with the highest useable power
  */
@@ -57,32 +109,6 @@ BtxVariants_t BTS7008 = {
     .iisFault = 0.0044,
     .iisOl = 0.0018,
     .iisEn = 0.000002
-};
-
-/**
- * @brief   BTS50010-1TAD.
- * @details Is rated for nominal 40 A
- */
-BtxVariants_t BTS50010 = {
-    .type = BTS5001X,
-    .kilis = 52100,
-    .iisFault = 0.0035,
-    .iisOl = 0.0,
-    .iisEn = 0.0,
-    .iisO = 0.000008
-};
-
-/**
- * @brief   BTS50015-1TAD.
- * @details Is rated for nominal 33 A
- */
-BtxVariants_t BTS50015 = {
-    .type = BTS5001X,
-    .kilis = 51500,
-    .iisFault = 0.0035,
-    .iisOl = 0.0,
-    .iisEn = 0.0,
-    .iisO = 0.000005
 };
 
 /**

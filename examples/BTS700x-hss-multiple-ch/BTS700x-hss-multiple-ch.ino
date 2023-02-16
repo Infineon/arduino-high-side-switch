@@ -6,8 +6,8 @@
  *                  - BTS7002
  *                  - BTS7004
  *                  - BTS7006
- *                  - BTS7008 
- * 
+ *                  - BTS7008
+ *
  *              It can be deployed to the Arduino Uno or the XMC's with corresponding form factor.
  * @copyright   Copyright (c) 2021 Infineon Technologies AG
  */
@@ -20,7 +20,7 @@ using namespace hss;
 /** The user needs to specify the BTS700x variant in the constructor argument */
 Bts700xShieldIno HSS = Bts700xShieldIno(&BTS7002);
 
-/** Select channels to be used parallelly (index 0 being channel 1) */
+/** Select channels to be used in parallel (index 0 being channel 1) */
 bool switch_no[4] = {true,true,true,true};
 
 Error_t err = OK;
@@ -39,8 +39,8 @@ void setup()
     }
     else
         Serial.println("Initialization successful!");
-    
-    delay(1000);    
+
+    delay(1000);
 }
 
 void loop()
@@ -49,7 +49,7 @@ void loop()
     Serial.println("\nTurning on all switches at once!");
     HSS.switchesHxOn(switch_no[0],switch_no[1],switch_no[2],switch_no[3]);
 
-    /** Keep them ON for a second */ 
+    /** Keep them ON for a second */
     delay(1000);
 
     /** Turn off the selected channels */

@@ -32,7 +32,7 @@ TimerIno::~TimerIno()
  * @brief   Initialization of the Timer
  * @details This function is initializing the Timer and sets
  *          the elapsed time to zero.
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::init()
 {
@@ -44,7 +44,7 @@ Error_t TimerIno::init()
  * @brief   Deinitialize the Timer
  * @details This function deinitialize the Timer and also
  *          resets the elapsed time variable.
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::deinit()
 {
@@ -55,7 +55,7 @@ Error_t TimerIno::deinit()
 /**
  * @brief   Start the timer
  * @details This function is starting the timer.
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::start()
 {
@@ -69,7 +69,7 @@ Error_t TimerIno::start()
  *          start of the timer. The value stored in the given variable
  *          is in milliseconds.
  * @param[in]   &elapsed      Address of a value where the elapsed time should be stored
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::elapsed(uint32_t &elapsed)
 {
@@ -81,7 +81,7 @@ Error_t TimerIno::elapsed(uint32_t &elapsed)
  * @brief   Stop the timer
  * @details This function stops the timer and resets the
  *          start time variable.
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::stop()
 {
@@ -94,7 +94,7 @@ Error_t TimerIno::stop()
  * @details This function is causing a desired delay of the application.
  *          The input value is given in milliseconds.
  * @param[in]   timeout                 Desired timeout in ms
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::delayMilli(uint32_t timeout)
 {
@@ -107,7 +107,7 @@ Error_t TimerIno::delayMilli(uint32_t timeout)
  * @details This function is causing a desired delay of the application.
  *          The input value is given in microseconds.
  * @param[in]   timeout                 Desired timeout in us
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t TimerIno::delayMicro(uint32_t timeout)
 {

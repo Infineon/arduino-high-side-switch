@@ -36,7 +36,7 @@ Btt60xxShield::~Btt60xxShield()
  * @brief   Initialize all necessary objects of the Profet 24V Shield
  * @details This function initializes all necessary objects of the Profet 24V Shield.
  *          It returns an error code to see if everything was initialized correctly.
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::init()
 {
@@ -56,9 +56,9 @@ Error_t Btt60xxShield::init()
  * @brief   Deinitialize all necessary objects of the Profet 24V Shield
  *
  * This function deinitializes all necessary objects of the Profet 24V Shield.
- * It retruns an error code to see if everything was deinitialized correctly.
+ * It returns an error code to see if everything was deinitialized correctly.
  *
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::deinit()
 {
@@ -83,7 +83,7 @@ Error_t Btt60xxShield::deinit()
  *                    Switch 2    -   Profet 1 (BTT6030 - channel 0) \n
  *                    Switch 3    -   Profet 1 (BTT6030 - channel 1) \n
  *                    Switch 4    -   Profet 2 (Single channel)
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::switchHxOn(uint8_t x)
 {
@@ -106,7 +106,7 @@ Error_t Btt60xxShield::switchHxOn(uint8_t x)
  *                    Switch 2    -   Profet 1 (BTT6030 - channel 0) \n
  *                    Switch 3    -   Profet 1 (BTT6030 - channel 1) \n
  *                    Switch 4    -   Profet 2 (Single channel)
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::switchHxOff(uint8_t x)
 {
@@ -128,7 +128,7 @@ Error_t Btt60xxShield::switchHxOff(uint8_t x)
  * @param[in] h0_1    Enable the Switch 1 - channel 0 if h0_1 = true
  * @param[in] h1_1    Enable the Switch 1 - channel 1 if h1_1 = true
  * @param[in] h2      Enable the Switch 2 - channel 0 if h2   = true
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::switchesHxOn(bool h0_0, bool h1_0, bool h0_1, bool h1_1, bool h2)
 {
@@ -174,7 +174,7 @@ Error_t Btt60xxShield::switchesHxOn(bool h0_0, bool h1_0, bool h0_1, bool h1_1, 
  * @param[in] h0_1    Disable the Switch 1 - channel 0 if h0_1 = true
  * @param[in] h1_1    Disable the Switch 1 - channel 1 if h1_1 = true
  * @param[in] h2      Disable the Switch 2 - channel 0 if h2   = true
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Btt60xxShield::switchesHxOff(bool h0_0, bool h1_0, bool h0_1, bool h1_1, bool h2)
 {

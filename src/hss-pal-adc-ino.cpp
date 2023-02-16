@@ -40,7 +40,7 @@ ADCIno::~ADCIno()
 
 /**
  * @brief  ADC initialization
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t ADCIno::init()
 {
@@ -49,7 +49,7 @@ Error_t ADCIno::init()
 
 /**
  * @brief ADC deinitialization
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t ADCIno::deinit()
 {
@@ -58,7 +58,7 @@ Error_t ADCIno::deinit()
 
 /**
  * @brief ADC enable
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t ADCIno::enable()
 {
@@ -68,39 +68,10 @@ Error_t ADCIno::enable()
 
 /**
  * @brief ADC disable
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t ADCIno::disable()
 {
-    return OK;
-}
-
-/**
- * @brief   Set resolution of the ADC
- * @details This function sets the resolution of the ADC.
- *          The available resolutions are depending on the ADC of the device
- *          and have be looked up in the datasheet.
- *          The default resolution is set to 12 Bit, see constructor.
- * @param[in]   resolution  Value of the read resolution, default = 10 Bit
- * @return High-side switch error code 
- */
-Error_t ADCIno::setReadResolution(uint8_t resolution)
-{
-    // analogReadResolution(resolution);
-
-    return OK;
-}
-
-/**
- * @brief   Set the write resolution of the ADC
- * @details This function sets the write resolution of the ADC.
- * @param[in]   resolution  Value of the write resolution of the ADC
- * @return High-side switch error code 
- */
-Error_t ADCIno::setWriteResolution(uint8_t resolution)
-{
-    // analogWriteResolution(resolution);
-
     return OK;
 }
 
@@ -118,10 +89,10 @@ uint16_t ADCIno::ADCRead()
 }
 
 /**
- * @brief   Wirte on an analog pin
+ * @brief   Write on an analog pin
  * @details This functions writes the given value to the analog pin
  * @param[in] value Value to write
- * @return  High-side switch error code 
+ * @return  High-side switch error code
  */
 Error_t ADCIno::ADCWrite(uint8_t value)
 {

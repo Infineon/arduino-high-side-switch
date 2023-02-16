@@ -28,19 +28,17 @@ class ExponentialFilter
 
         ExponentialFilter();
         ExponentialFilter(float y);
-        ExponentialFilter(float y, uint16_t t);
+        ExponentialFilter(float y, float a);
 
-        void setFilter(float y, uint16_t t);
-        void setTau(uint16_t t);
+        void setFilter(float y, float a);
+        void setAlpha(float a);
         void setToNewValue(float y);
         void input(float x);
         float output();
-        uint16_t pow2(uint16_t p);
 
     private:
 
-        uint16_t tau;   /**< Time constant */
-
+        float alpha;    /**< Smoothing constant */
         float y;        /**< Output value */
         float y_last;   /**< Last output value */
         float x;        /**< Input value*/

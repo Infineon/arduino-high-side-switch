@@ -9,8 +9,13 @@
 #ifndef HSS_SHIELD_PLATF_HPP_
 #define HSS_SHIELD_PLATF_HPP_
 
-#include <stdint.h>
-
+#ifdef __AVR__
+    #include <stdint.h>
+#else    
+    #include <cmath>
+    #include <cstdint>
+    #include <cstdlib>
+#endif
 namespace hss
 {
 
@@ -48,12 +53,33 @@ struct Bts700xHwConfig_t
 };
 
 /**
- * @brief BTS700x Shield Default Pin Configuration 
+ * @brief BTS700x Shield Default Pin Configuration
  */
 extern Bts700xHwConfig_t BTS700X_HWCONFIG;
 
+struct Bts500xxHwConfig_t
+{
+    uint8_t in1;    /**< Switch 1 input pin */
+    uint8_t in2;    /**< Switch 2 input pin */
+
+    uint8_t den1;   /**< Switch 1 diagnosis enable pin */
+    uint8_t den2;   /**< Switch 2 diagnosis enable pin */
+
+    uint8_t is1;    /**< Switch 1 current sense pin */
+    uint8_t is2;    /**< Switch 2 current sense pin */
+
+    uint8_t vs;     /**< Battery voltage pin */
+    uint8_t vOut;   /**< Output voltage of switch 1 */
+    uint8_t temp;   /**< Temperature measurement */
+};
+
 /**
- * @brief BTS5001x Shield Pin Configuration 
+ * @brief BTS500xx Shield standard pin configuration
+ */
+extern Bts500xxHwConfig_t BTS500XX_HWCONFIG;
+
+/**
+ * @brief BTS5001x Shield Pin Configuration
  */
 struct BTS5001xHwConfig_t
 {
@@ -70,12 +96,12 @@ struct BTS5001xHwConfig_t
 };
 
 /**
- * @brief BTS5001x Shield Default Pin Configuration 
+ * @brief BTS5001x Shield Default Pin Configuration
  */
 extern BTS5001xHwConfig_t BTS5001X_HWCONFIG;
 
 /**
- * @brief BTT60xx Shield Pin Configuration 
+ * @brief BTT60xx Shield Pin Configuration
  */
 struct Btt60xxHwConfig_t
 {
@@ -101,7 +127,7 @@ struct Btt60xxHwConfig_t
 };
 
 /**
- * @brief BTT60xx Shield Default Pin Configuration 
+ * @brief BTT60xx Shield Default Pin Configuration
  */
 extern Btt60xxHwConfig_t BTT60XX_HWCONFIG;
 

@@ -89,14 +89,14 @@ void loop()
 
     Serial.println("\n*** Part B: Multiple switch operation ***");
 
-    /** Turn on all 4 switches parallelly */
+    /** Turn on all 4 switches in parallel */
     Serial.println("\n--> Turning on all switches at once!");
     HSS.switchesHxOn(1,1,1,1);
 
     /** Keep all switches on for a second */
     delay(1000);
 
-    /** Turn off all 4 switches parallelly */
+    /** Turn off all 4 switches in parallel */
     Serial.println("--> Turning off all switches at once!");
     HSS.switchesHxOff(1,1,1,1);
 

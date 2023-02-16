@@ -43,13 +43,13 @@ Bts5001xShield::~Bts5001xShield()
  * @brief Initialize all necessary objects of the High-Side-Switch-Board
  *
  * This function initializes all necessary objects of the High-Side-Switch-Board.
- * It retruns an error code to see if everything was initialized correctly.
+ * It returns an error code to see if everything was initialized correctly.
  *
  * @return hss::Error_t
  */
 Error_t Bts5001xShield::init()
 {
-    Error_t err= OK;
+    Error_t err = OK;
 
     HSS_ASSERT_NULLPTR(hss1);
     err = hss1->init();
@@ -79,7 +79,7 @@ Error_t Bts5001xShield::init()
         HSS_ASSERT_RET(err);
     }
 
-    filterVbat = new ExponentialFilter(0.0, 0.3);
+    filterVbat = new ExponentialFilter(0.0, 0.4);
 
     return OK;
 }
@@ -88,9 +88,9 @@ Error_t Bts5001xShield::init()
  * @brief Deinitialize all necessary objects of the High-Side-Switch-Board
  *
  * This function deinitializes all necessary objects of the High-Side-Switch-Board.
- * It retruns an error code to see if everything was deinitialized correctly.
+ * It returns an error code to see if everything was deinitialized correctly.
  *
- * @return High-side switch error code 
+ * @return High-side switch error code
  */
 Error_t Bts5001xShield::deinit()
 {
@@ -128,11 +128,11 @@ Error_t Bts5001xShield::deinit()
 }
 
 /**
- * @brief    Switch on the selected High-Side-Switch
- * @details  This function turns on the desired High-Side-Switch.
- *           It also turns on the corresponding LED of the switch.
+ * @brief       Switch on the selected High-Side-Switch
+ * @details     This function turns on the desired High-Side-Switch.
+ *              It also turns on the corresponding LED of the switch.
  * @param[in]   x   Number of the Switch the should be turned on (1-4)
- * @return High-side switch error code 
+ * @return      High-side switch error code
  */
 Error_t Bts5001xShield::switchHxOn(uint8_t x)
 {
@@ -153,11 +153,11 @@ Error_t Bts5001xShield::switchHxOn(uint8_t x)
 }
 
 /**
- * @brief    Switch off the selected High-Side-Switch
- * @details  This function turns off the desired High-Side-Switch.
- *           It also turns off the corresponding LED of the switch.
+ * @brief       Switch off the selected High-Side-Switch
+ * @details     This function turns off the desired High-Side-Switch.
+ *              It also turns off the corresponding LED of the switch.
  * @param[in]   x   Number of the Switch the should be turned off (1-4)
- * @return High-side switch error code 
+ * @return      High-side switch error code
  */
 Error_t Bts5001xShield::switchHxOff(uint8_t x)
 {
@@ -179,12 +179,12 @@ Error_t Bts5001xShield::switchHxOff(uint8_t x)
 
 
 /**
- * @brief   Read the desired current value of the chosen channel
- * @details This function reads the IS pin of the chosen High-Side-Switch
- *          and calculates the current which is flowing through the switch
- *          with the acquired ADC value.
+ * @brief       Read the desired current value of the chosen channel
+ * @details     This function reads the IS pin of the chosen High-Side-Switch
+ *              and calculates the current which is flowing through the switch
+ *              with the acquired ADC value.
  * @param[in]   x   Number of the desired channel (1)
- * @return          The value of the current in [A]
+ * @return      The value of the current in [A]
  */
 float Bts5001xShield::readIsx(uint8_t x)
 {
@@ -198,11 +198,11 @@ float Bts5001xShield::readIsx(uint8_t x)
 }
 
 /**
- * @brief    Read the diagnosis of the chosen channel
- * @details  This function uses the current signal of the channel to diagnose the channel.
- *           It returns the different states depending on the channels condition.
+ * @brief       Read the diagnosis of the chosen channel
+ * @details     This function uses the current signal of the channel to diagnose the channel.
+ *              It returns the different states depending on the channels condition.
  * @param[in]   x   Desired channel for the diagnosis (1)
- * @return          DiagStatus_t
+ * @return      DiagStatus_t
  *
  * @retval  -2  Not enabled
  * @retval  0   Switch is working fine
@@ -240,7 +240,7 @@ float Bts5001xShield::readVss()
     adcResult = vBat->ADCRead();
     voltage = adcResult * ((float)5/(float)1024);   // Vmax/1024 LSB = Resolution of the ADC,
     voltage = (voltage - vBatOffset);
-    voltage = voltage * ((float)57/(float)10);      // 57/10 = Reverse Voltage devider to get the Supplyvoltage
+    voltage = voltage * ((float)57/(float)10);      // 57/10 = Reverse Voltage divider to get the supply voltage
 
     filterVbat->input(voltage);
 
@@ -267,9 +267,9 @@ bool Bts5001xShield::analogReadButton()
 }
 
 /**
- * @brief   Set battery voltage offset
- * @details This function can be used to change the value of the internal variable
- *          of the battery voltage offset
+ * @brief       Set battery voltage offset
+ * @details     This function can be used to change the value of the internal variable
+ *              of the battery voltage offset
  * @param[in]   offset  Desired value of the offset in [V]
  */
 void Bts5001xShield::setVoltageOffset(float offset)

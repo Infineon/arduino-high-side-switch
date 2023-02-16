@@ -38,8 +38,6 @@ class ADCIno : virtual public ADCPAL
         Error_t     deinit();
         Error_t     enable();
         Error_t     disable();
-        Error_t     setReadResolution(uint8_t resolution);
-        Error_t     setWriteResolution(uint8_t resolution);
         uint16_t    ADCRead();
         Error_t     ADCWrite(uint8_t value);
 };

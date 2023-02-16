@@ -58,7 +58,7 @@ class Hss
         GPIOPAL             *dsel;  /**< Diagnosis select */
         ADCPAL              *is;    /**< Diagnosis current */
 
-        TimerPAL            *timer; /**< Timer instace */
+        TimerPAL            *timer; /**< Timer instance*/
 
         ExponentialFilter   *currentFilter; /**< Current filter */
 

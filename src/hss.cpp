@@ -12,7 +12,7 @@
 using namespace hss;
 
 /**
- * @brief   High-Side-Switch constructor
+ * @brief       High-Side-Switch constructor
  * @param[in]   den         Diagnosis enable GPIO instance
  * @param[in]   in          Switch input GPIO instance
  * @param[in]   is          Diagnose current ADC instance
@@ -39,9 +39,9 @@ Hss::Hss(GPIOPAL *den, GPIOPAL *in, ADCPAL *is, TimerPAL *timer, BtxVariants_t *
 }
 
 /**
- * @brief   High-Side-Switch constructor
- * @details This constructor is used to define all necessary pins
- *          of the 24V PROFET.
+ * @brief       High-Side-Switch constructor
+ * @details     This constructor is used to define all necessary pins
+ *              of the 24V PROFET.
  * @param[in]   den         Diagnosis enable GPIO instance
  * @param[in]   in0         Switch input 0 GPIO instance
  * @param[in]   in1         Switch input 1 GPIO instance
@@ -62,7 +62,7 @@ Hss::Hss(GPIOPAL *den, GPIOPAL *in0, GPIOPAL *in1,  GPIOPAL *dsel, ADCPAL *is, T
 
     this->btxVariant = btxVariant;
 
-     currentFilter = new ExponentialFilter(0.0, 0.3);
+    currentFilter = new ExponentialFilter(0.0, 0.3);
 
     status = UNINITED;
     diagEnb = DIAG_DIS;
@@ -81,8 +81,8 @@ Hss::~Hss()
 /**
  * @brief   Initialize the High-Side-Switch
  * @details This function initializes all necessary objects of the High-Side-Switch.
- *          It retruns an error code to see if everything was initialized correctly.
- * @return High-side switch error code 
+ *          It returns an error code to see if everything was initialized correctly.
+ * @return  High-side switch error code
  */
 Error_t Hss::init()
 {
@@ -128,8 +128,8 @@ Error_t Hss::init()
 }
 
 /**
- * @brief Deinitialize the High-Side-Switch
- * @return High-side switch error code 
+ * @brief   Deinitialize the High-Side-Switch
+ * @return  High-side switch error code
  */
 Error_t Hss::deinit()
 {
@@ -175,11 +175,11 @@ Error_t Hss::deinit()
 }
 
 /**
- * @brief    Enable the High-Side-Switch
- * @details  This function is turning on the High-Side-Switch.
- *           It is also setting the status of the switch to ON.
+ * @brief       Enable the High-Side-Switch
+ * @details     This function is turning on the High-Side-Switch.
+ *              It is also setting the status of the switch to ON.
  * @param[in]   ch      Channel number. Default 0.
- * @return High-side switch error code 
+ * @return      High-side switch error code
  */
 Error_t Hss::enable(Channel_t ch)
 {
@@ -213,11 +213,11 @@ Error_t Hss::enable(Channel_t ch)
 }
 
 /**
- * @brief   Disable the High-Side-Switch
- * @details This function turns off the High-Side-Switch.
- *          It is also setting the status of the switch to OFF.
+ * @brief       Disable the High-Side-Switch
+ * @details     This function turns off the High-Side-Switch.
+ *              It is also setting the status of the switch to OFF.
  * @param[in]   ch      Channel number. Default 0.
- * @return High-side switch error code 
+ * @return      High-side switch error code
  */
 Error_t Hss::disable(Channel_t ch)
 {
@@ -257,7 +257,7 @@ Error_t Hss::disable(Channel_t ch)
 /**
  * @brief   Enable diagnosis function
  * @details This function is enabling the diagnosis function of the High-Side-Switch.
- * @return High-side switch error code 
+ * @return  High-side switch error code
  */
 Error_t Hss::enableDiag()
 {
@@ -285,7 +285,7 @@ Error_t Hss::enableDiag()
 /**
  * @brief   Disable diagnosis function
  * @details This function is disabling the diagnosis function of the High-Side-Switch
- * @return High-side switch error code 
+ * @return  High-side switch error code
  */
 Error_t Hss::disableDiag()
 {
@@ -311,11 +311,11 @@ Error_t Hss::disableDiag()
 }
 
 /**
- * @brief   Selects diagnosis channel for diagnosis
- * @details This function is selecting the channel to perform diagnosis
- * @note    This function is accessed only if the shield is Profet24V
- * @param[in] ch    Channel number (in case of Profet 24V shield)
- * @return High-side switch error code 
+ * @brief       Selects diagnosis channel for diagnosis
+ * @details     This function is selecting the channel to perform diagnosis
+ * @note        This function is accessed only if the shield is Profet24V
+ * @param[in]   ch    Channel number (in case of Profet 24V shield)
+ * @return      High-side switch error code
  */
 Error_t Hss::selDiagCh(Channel_t ch)
 {
@@ -354,15 +354,15 @@ Status_t Hss::getSwitchStatus()
 }
 
 /**
- * @brief   Read ADC value for IS
- * @details This functions is reading the IS signal of the switch.
- *          It returns the calculated current, which is depending on the IS signal.
+ * @brief       Read ADC value for IS
+ * @details     This functions is reading the IS signal of the switch.
+ *              It returns the calculated current, which is depending on the IS signal.
  * @param[in]   rSense  Resistor value of the current sense resistor in [Ohm]
  * @param[in]   ch      Channel number
- * @note    Before calling this function, ensure IS pin is initialized and
- *          you do not have to pass channel in case your shield does not support multiple channel
- *          and this would default to CHANNEL0 applicable.
- * @return  Value of the current flowing through the switch in [A]
+ * @note        Before calling this function, ensure IS pin is initialized and
+ *              you do not have to pass channel in case your shield does not support multiple channel
+ *              and this would default to CHANNEL0 applicable.
+ * @return      Value of the current flowing through the switch in [A]
  */
 float Hss::readIs(uint16_t rSense, Channel_t ch)
 {
@@ -385,19 +385,19 @@ float Hss::readIs(uint16_t rSense, Channel_t ch)
 }
 
 /**
- * @brief   Diagnosis of the Sensor
- * @details This function is using the IS signal to determine the state of the switch.
- *          It returns an diagnosis state of the switch.
+ * @brief       Diagnosis of the Sensor
+ * @details     This function is using the IS signal to determine the state of the switch.
+ *              It returns an diagnosis state of the switch.
  * @param[in]   senseCurrent    Sensed current value
  * @param[in]   ch              Channel no. Unused.
- * @return  DiagStatus_t
+ * @return      DiagStatus_t
  *
- * @retval   0  Switch is working fine
- * @retval   1  Fault condition detected
- * @retval   2  Open Load in ON or Inverse Current
- * @note    This function should be called only after you get the Is value.
- *          Also note, in case you are using shield with no channel differentiation,
- *          then ignore the 'ch' parameter and this will default to CHANNEL0.
+ * @retval      0  Switch is working fine
+ * @retval      1  Fault condition detected
+ * @retval      2  Open Load in ON or Inverse Current
+ * @note        This function should be called only after you get the Is value.
+ *              Also note, in case you are using shield with no channel differentiation,
+ *              then ignore the 'ch' parameter and this will default to CHANNEL0.
  */
 DiagStatus_t Hss::diagRead(float senseCurrent, Channel_t ch)
 {
@@ -423,9 +423,9 @@ DiagStatus_t Hss::diagRead(float senseCurrent, Channel_t ch)
 }
 
 /**
- * @brief   Set current offset
- * @details This function can be used to change the value of the internal variable
- *          of the current offset
+ * @brief       Set current offset
+ * @details     This function can be used to change the value of the internal variable
+ *              of the current offset
  * @param[in]   offset  Desired value of the current offset in [A]
  */
 void Hss::setCurrentOffset(float offset)

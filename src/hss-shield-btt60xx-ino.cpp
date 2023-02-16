@@ -16,11 +16,11 @@ using namespace hss;
  * @details Initialize all protected class pointers.
  */
 Btt60xxShieldIno::Btt60xxShieldIno():
-Btt60xxShield  (
-                        switches[0] = new HssIno(BTT60XX_HWCONFIG.den_0, BTT60XX_HWCONFIG.in0_0, BTT60XX_HWCONFIG.in1_0, BTT60XX_HWCONFIG.dsel_0, BTT60XX_HWCONFIG.is_0, &BTT6030),
-                        switches[1] = new HssIno(BTT60XX_HWCONFIG.den_1, BTT60XX_HWCONFIG.in0_1, BTT60XX_HWCONFIG.in1_1, BTT60XX_HWCONFIG.dsel_1, BTT60XX_HWCONFIG.is_1, &BTT6030),
-                        switches[2] = new HssIno(BTT60XX_HWCONFIG.den_2, BTT60XX_HWCONFIG.in0_2, BTT60XX_HWCONFIG.is_2, &BTT6020)
-                    )
+Btt60xxShield (
+                switches[0] = new HssIno(BTT60XX_HWCONFIG.den_0, BTT60XX_HWCONFIG.in0_0, BTT60XX_HWCONFIG.in1_0, BTT60XX_HWCONFIG.dsel_0, BTT60XX_HWCONFIG.is_0, &BTT6030),
+                switches[1] = new HssIno(BTT60XX_HWCONFIG.den_1, BTT60XX_HWCONFIG.in0_1, BTT60XX_HWCONFIG.in1_1, BTT60XX_HWCONFIG.dsel_1, BTT60XX_HWCONFIG.is_1, &BTT6030),
+                switches[2] = new HssIno(BTT60XX_HWCONFIG.den_2, BTT60XX_HWCONFIG.in0_2, BTT60XX_HWCONFIG.is_2, &BTT6020)
+              )
 {
 
 }
@@ -31,11 +31,11 @@ Btt60xxShield  (
  * @param[in]   config  Pinout hardware configuration
  */
 Btt60xxShieldIno::Btt60xxShieldIno(Btt60xxHwConfig_t config):
-Btt60xxShield  (
-                        switches[0] = new HssIno(config.den_0, config.in0_0, config.in1_0, config.dsel_0, config.is_0, &BTT6030),
-                        switches[1] = new HssIno(config.den_1, config.in0_1, config.in1_1, config.dsel_1, config.is_1, &BTT6030),
-                        switches[2] = new HssIno(config.den_2, config.in0_2, config.is_2, &BTT6020)
-                    )
+Btt60xxShield (
+                switches[0] = new HssIno(config.den_0, config.in0_0, config.in1_0, config.dsel_0, config.is_0, &BTT6030),
+                switches[1] = new HssIno(config.den_1, config.in0_1, config.in1_1, config.dsel_1, config.is_1, &BTT6030),
+                switches[2] = new HssIno(config.den_2, config.in0_2, config.is_2, &BTT6020)
+              )
 {
 
 }
