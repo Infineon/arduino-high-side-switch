@@ -23,11 +23,12 @@ namespace hss
  * @brief   High side switch variant type
  */
 enum HssType_t
-{
-    BTS500XX,       /**< PROFET + 12V family */
-    BTS5001X,       /**< Power PROFET family */
-    BTS700X,        /**< PROFET +2 12V family */
-    BTT60X0         /**< PROFET + 24V family */
+{   
+    BTH500XX,       /**< Power PROFET™ + 24V / 48V family */
+    BTS500XX,       /**< PROFET™ + 12V family */
+    BTS5001X,       /**< Power PROFET™ family */
+    BTS700X,        /**< PROFET™ +2 12V family */
+    BTT60X0         /**< PROFET™ + 24V family */
 };
 
 /**
@@ -44,6 +45,9 @@ struct BtxVariants_t
     float           iisEn;          /**< Leakage current when channel is enabled */
     float           iisO;           /**< Sense offset */
 };
+
+extern BtxVariants_t BTH50015_1LUA;
+extern BtxVariants_t BTH50030_1LUA;
 
 extern BtxVariants_t BTS50005_1LUA;
 extern BtxVariants_t BTS50010_1LUA;

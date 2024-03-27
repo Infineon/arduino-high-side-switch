@@ -131,7 +131,9 @@ void getSwitchParams(int switch_no)
 void readCurrent(int switch_no)
 {
     float readAmps = 0.0;
-    readAmps = HSS.readIsx(switch_no);
+    for(int i = 0; i<10; i++){
+    readAmps = HSS.readIsx(switch_no);                    // Read the diagnosis function more than once to make sure the IS value is correct (internal exponential filter)
+    }
     Serial.print("Current flowing through the switch: ");
     Serial.print(readAmps);
     Serial.println(" A");

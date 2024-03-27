@@ -79,6 +79,30 @@ struct Bts500xxHwConfig_t
 extern Bts500xxHwConfig_t BTS500XX_HWCONFIG;
 
 /**
+ * @brief BTH500xx Shield Pin Configuration
+ */
+struct Bth500xxHwConfig_t
+{
+    uint8_t in1;    /**< Switch 1 input pin */
+    uint8_t in2;    /**< Switch 2 input pin */
+
+    uint8_t den1;   /**< Switch 1 diagnosis enable pin */
+    uint8_t den2;   /**< Switch 2 diagnosis enable pin */
+
+    uint8_t is1;    /**< Switch 1 current sense pin */
+    uint8_t is2;    /**< Switch 2 current sense pin */
+
+    uint8_t vs;     /**< Battery voltage pin */
+    uint8_t vOut;   /**< Output voltage of switch 1 */
+    uint8_t temp;   /**< Temperature measurement */
+};
+
+/**
+ * @brief BTH500xx Shield default pin configuration
+ */
+extern Bth500xxHwConfig_t BTH500XX_HWCONFIG;
+
+/**
  * @brief BTS5001x Shield Pin Configuration
  */
 struct BTS5001xHwConfig_t

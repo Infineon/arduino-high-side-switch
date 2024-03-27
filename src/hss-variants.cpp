@@ -12,6 +12,32 @@ namespace hss
 {
 
 /**
+ * @brief BTH50015-1LUA
+ * @details Is rated for nominal 34 A
+ */
+BtxVariants_t BTH50015_1LUA = {
+    .type = BTH500XX,
+    .kilis = 52000,
+    .iisFault = 0.0023,
+    .iisOl = 0.0,
+    .iisEn = 0.0,
+    .iisO = 0.0
+};
+
+/**
+ * @brief BTH50030-1LUA
+ * @details Is rated for nominal 24 A
+ */
+BtxVariants_t BTH50030_1LUA = {
+    .type = BTH500XX,
+    .kilis = 34000,
+    .iisFault = 0.0023,
+    .iisOl = 0.0,    
+    .iisEn = 0.0,
+    .iisO = 0.0
+};
+
+/**
  * @brief BTS50005-1LUA
  * @details Is rated for nominal 57 A
  */
