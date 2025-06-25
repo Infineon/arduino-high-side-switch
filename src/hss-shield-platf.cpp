@@ -13,7 +13,7 @@ namespace hss
     
 #include <Arduino.h>
 
-#if defined(XMC1100_Boot_Kit)
+#if defined(XMC1100_Boot_Kit) 
 
 /**
  * @brief BTS700x Shield Arduino Uno Pin Configuration
