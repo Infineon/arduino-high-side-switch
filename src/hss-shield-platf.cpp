@@ -7,11 +7,11 @@
  */
 
 #include "hss-shield-platf.hpp"
-
+#include <Arduino.h>
 namespace hss
 {
     
-#include <Arduino.h>
+
 
 #if defined(XMC1100_Boot_Kit) 
 
